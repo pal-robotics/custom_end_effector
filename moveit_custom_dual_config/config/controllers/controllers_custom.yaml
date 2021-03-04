@@ -38,17 +38,23 @@ controller_list:
     type: FollowJointTrajectory
     joints:
       [torso_lift_joint]
-  - name: gripper_left_controller
-    action_ns: follow_joint_trajectory
-    type: FollowJointTrajectory
-    default: true
-    joints:
-      - gripper_left_left_finger_joint
-      - gripper_left_right_finger_joint
-  - name: gripper_right_controller
-    action_ns: follow_joint_trajectory
-    type: FollowJointTrajectory
-    default: true
-    joints:
-      - gripper_right_left_finger_joint
-      - gripper_right_right_finger_joint
+  # TODO: Add your own controller and uncomment/modify proper blocks
+  #  Uncomment and adapt this if you have at least one pal-gripper
+  # - name: gripper_<right|left>_controller
+  #   action_ns: follow_joint_trajectory
+  #   type: FollowJointTrajectory
+  #   default: true
+  #   joints:
+  #     - gripper_<right|left>_left_finger_joint
+  #     - gripper_<right|left>_right_finger_joint
+
+  #  Uncomment and adapt this if you have at least one hey-5
+  # - name: hand_<right|left>_controller
+  # action_ns: follow_joint_trajectory
+  # type: FollowJointTrajectory
+  # default: true
+  # joints:
+  #   - hand_<right|left>_index_joint
+  #   - hand_<right|left>_thumb_joint
+  #   - hand_<right|left>_mrl_joint
+
