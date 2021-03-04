@@ -11,7 +11,8 @@ approach_planner:
   exclude_from_planning_joints:
     - head_1_joint
     - head_2_joint
-    - cee_tool_link
+    - cee_right_tool_link
+    - cee_left_tool_link
   joint_tolerance: 0.01
   skip_planning_approach_vel: 0.5
   skip_planning_approach_min_dur: 0.5

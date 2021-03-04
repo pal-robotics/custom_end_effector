@@ -18,5 +18,6 @@ link_list: ['arm_left_1_link',
             'wheel_right_link',
             'wheel_left_link',
             'base_laser_link',
-            'cee_tool_link']
+            'cee_right_tool_link',
+            'cee_left_tool_link',]
 padding: 0.05
