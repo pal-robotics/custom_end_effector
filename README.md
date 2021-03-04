@@ -1,5 +1,5 @@
 # Custom End Effector
-This repository contains a set of prepared packages and files which can be used to integrate a custom end-effector to a TIAGo robot. Once thw apropriate modifications are made, deploy all three packages to the robot and select `custom` for the end effector type on the Web Commander.
+This repository contains a set of prepared packages and files which can be used to integrate a custom end-effector to a TIAGo robot. Once the apropriate modifications are made, deploy all three packages to the robot and select `custom` for the end effector type on the Web Commander.
 
 ## Packages
 This repository is comprised of three different packages, which conatin a wrapper for the URDF description of the end-effector, configuration files and MoveIt configuration for the new configuration.
@@ -7,7 +7,7 @@ This repository is comprised of three different packages, which conatin a wrappe
 ### custom_ee_description
 This package contains a simple wrapper to include the URDF description of the custom end-effector, so the system knows its new configuration. This package must contain the following file:
 * `urdf/end-effector.urdf.xacro`
-  * This file must contain a xacro macro named `end_effector`, with a paramater named `parent`, which contains the name of the previous link in the kinematic chain of the arm; and an `origin`tag as its content, with the root position of the custom end-effector.
+  * This file must contain a xacro macro named `end_effector`, with a paramater named `parent`, which contains the name of the previous link in the kinematic chain of the arm; and an `origin` tag as its content, with the root position of the custom end-effector.
 
 ### moveit_custom_config
 This package contains configuration files need for MoveIt to interact properly with the new end-effector.
