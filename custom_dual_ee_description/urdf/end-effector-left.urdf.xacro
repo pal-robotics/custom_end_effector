@@ -22,7 +22,7 @@
   <xacro:macro name="end_effector_left" params="parent *origin">
 
     <!-- Example link and Joint -->
-    <link name="cee_tool_link">
+    <link name="cee_left_tool_link">
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <mass value="0.0001" />
@@ -46,10 +46,10 @@
         </geometry>
       </collision>
     </link>
-    <joint name="cee_tool_joint" type="fixed">
+    <joint name="cee_left_tool_joint" type="fixed">
       <xacro:insert_block name="origin"/>
       <parent link="${parent}" />
-      <child link="cee_tool_link" />
+      <child link="cee_left_tool_link" />
       <axis xyz="0 0 0" />
     </joint>
 
