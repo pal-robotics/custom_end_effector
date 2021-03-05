@@ -57,7 +57,7 @@ if side == "right":
     <end_effector name="gripper_@(side)" parent_link="arm_@(side)_tool_link" group="gripper_@(side)" parent_group="arm_@(side)_torso" />
 @[end if]@
 @[if end_effector == 'cee_left_tool_link']@
-<!-- TODO: Modify content of this if with you customized links and joints -->
+<!-- TODO: Modify content of this if with your customized links and joints -->
     <group name="cee_left_tool_link">
         <link name="cee_left_tool_link"/>
         <joint name="cee_left_tool_joint" />
@@ -66,7 +66,7 @@ if side == "right":
     <end_effector name="cee_left_tool_link" parent_link="arm_@(side)_tool_link" group="cee_left_tool_link" parent_group="arm_@(side)_torso" />
 @[end if]@
 @[if end_effector == 'cee_right_tool_link']@
-<!-- TODO: Modify content of this if with you customized links and joints -->
+<!-- TODO: Modify content of this if with your customized links and joints -->
     <group name="cee_right_tool_link">
         <link name="cee_right_tool_link"/>
         <joint name="cee_right_tool_joint" />
