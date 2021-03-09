@@ -249,6 +249,7 @@
     <disable_collisions link1="torso_lift_link" link2="wheel_left_link" reason="Never" />
     <disable_collisions link1="torso_lift_link" link2="wheel_right_link" reason="Never" />
     <disable_collisions link1="wheel_left_link" link2="wheel_right_link" reason="Never" />
+    <disable_collisions link1="" link2="" reason="Adjacent" />
 
     <!-- Next disables generated with: https://gist.github.com/awesomebytes/18fe75b808c4c644bd3d -->
     <!-- Disabled because they are adjacent -->
@@ -1081,7 +1082,9 @@
     <disable_collisions link1="arm_right_tool_link" link2="xtion_rgb_frame" reason="Never"/>
     <disable_collisions link1="arm_right_tool_link" link2="xtion_rgb_optical_frame" reason="Never"/>
 
-    <disable_collisions link1="caster_back_left_1_link" link2="gripper_right_link" reason="Never" />
+
+  <!-- TODO: Modify according to your end effector links -->
+      <disable_collisions link1="caster_back_left_1_link" link2="gripper_right_link" reason="Never" />
     <disable_collisions link1="caster_back_left_2_link" link2="gripper_right_link" reason="Never" />
     <disable_collisions link1="gripper_right_left_finger_link" link2="gripper_right_link" reason="Adjacent" />
     <disable_collisions link1="gripper_right_left_finger_link" link2="gripper_right_right_finger_link" reason="Default" />
@@ -1198,6 +1201,8 @@
     <disable_collisions link1="arm_right_5_link" link2="gripper_right_grasping_frame" reason="Never"/>
     <disable_collisions link1="arm_right_6_link" link2="gripper_right_grasping_frame" reason="Never"/>
     <disable_collisions link1="arm_right_7_link" link2="gripper_right_grasping_frame" reason="Never"/>
+  
+  <!-- TODO: Modify according to your end effector links -->
   
 
 

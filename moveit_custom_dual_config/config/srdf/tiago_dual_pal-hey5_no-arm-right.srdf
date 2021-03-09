@@ -289,6 +289,7 @@
     <disable_collisions link1="torso_lift_link" link2="wheel_left_link" reason="Never" />
     <disable_collisions link1="torso_lift_link" link2="wheel_right_link" reason="Never" />
     <disable_collisions link1="wheel_left_link" link2="wheel_right_link" reason="Never" />
+    <disable_collisions link1="" link2="" reason="Adjacent" />
 
     <!-- Next disables generated with: https://gist.github.com/awesomebytes/18fe75b808c4c644bd3d -->
     <!-- Disabled because they are adjacent -->
@@ -1122,6 +1123,10 @@
     <disable_collisions link1="arm_right_tool_link" link2="xtion_rgb_optical_frame" reason="Never"/>
 
 
+  <!-- TODO: Modify according to your end effector links -->
+  
+  <!-- TODO: Modify according to your end effector links -->
+  
 
     <disable_collisions link1="arm_left_1_link" link2="hand_left_index_link" reason="Never" />
     <disable_collisions link1="arm_left_1_link" link2="hand_left_little_abd_link" reason="Never" />

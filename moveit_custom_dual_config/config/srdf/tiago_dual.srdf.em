@@ -56,23 +56,14 @@ if side == "right":
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="gripper_@(side)" parent_link="arm_@(side)_tool_link" group="gripper_@(side)" parent_group="arm_@(side)_torso" />
 @[end if]@
-@[if end_effector == 'cee_left_tool_link']@
+@[if end_effector == 'custom']@
 <!-- TODO: Modify content of this if with your customized links and joints -->
-    <group name="cee_left_tool_link">
-        <link name="cee_left_tool_link"/>
-        <joint name="cee_left_tool_joint" />
+    <group name="custom_@(side)">
+        <link name="cee_@(side)_tool_link"/>
+        <joint name="cee_@(side)_tool_joint" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="cee_left_tool_link" parent_link="arm_@(side)_tool_link" group="cee_left_tool_link" parent_group="arm_@(side)_torso" />
-@[end if]@
-@[if end_effector == 'cee_right_tool_link']@
-<!-- TODO: Modify content of this if with your customized links and joints -->
-    <group name="cee_right_tool_link">
-        <link name="cee_right_tool_link"/>
-        <joint name="cee_right_tool_joint" />
-    </group>
-    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="cee_right_tool_link" parent_link="arm_@(side)_tool_link" group="cee_right_tool_link" parent_group="arm_@(side)_torso" />
+    <end_effector name="custom_@(side)" parent_link="arm_@(side)_tool_link" group="custom_@(side)" parent_group="arm_@(side)_torso" />
 @[end if]@
 @[if end_effector == 'schunk-wsg']@
     <group name="gripper_@(side)">
@@ -333,6 +324,7 @@ if side == "right":
     <disable_collisions link1="torso_lift_link" link2="wheel_left_link" reason="Never" />
     <disable_collisions link1="torso_lift_link" link2="wheel_right_link" reason="Never" />
     <disable_collisions link1="wheel_left_link" link2="wheel_right_link" reason="Never" />
+    <disable_collisions link1="" link2="" reason="Adjacent" />
 
     <!-- Next disables generated with: https://gist.github.com/awesomebytes/18fe75b808c4c644bd3d -->
     <!-- Disabled because they are adjacent -->
@@ -1110,6 +1102,73 @@ if side == "right":
     <disable_collisions link1="arm_@(side)_7_link" link2="gripper_@(side)_left_finger_link" reason="Never" />
     <disable_collisions link1="arm_@(side)_7_link" link2="gripper_@(side)_link" reason="Default" />
     <disable_collisions link1="arm_@(side)_7_link" link2="gripper_@(side)_right_finger_link" reason="Never" />
+    <disable_collisions link1="arm_@(side)_tool_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="arm_@(side)_1_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="arm_@(side)_2_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="arm_@(side)_3_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="arm_@(side)_4_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="arm_@(side)_5_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="arm_@(side)_6_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="arm_@(side)_7_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+  @[end if]@
+
+  <!-- TODO: Modify according to your end effector links -->
+  @[if end_effector == "custom"]@
+    <disable_collisions link1="caster_back_left_1_link" link2="cee_@(side)_tool_link" reason="Never" />
+    <disable_collisions link1="caster_back_left_2_link" link2="cee_@(side)_tool_link" reason="Never" />
+    <disable_collisions link1="cee_@(side)_tool_link" link2="gripper_@(side)_grasping_frame" reason="Adjacent"/>
+    <disable_collisions link1="base_laser_link" link2="gripper_@(side)_grasping_frame" reason="Never" />
+    <disable_collisions link1="base_footprint" link2="gripper_@(side)_grasping_frame" reason="Never" />
+    <disable_collisions link1="base_cover_link" link2="gripper_@(side)_grasping_frame" reason="Never" />
+    <disable_collisions link1="base_imu_link" link2="gripper_@(side)_grasping_frame" reason="Never" />
+    <disable_collisions link1="caster_front_right_1_link" link2="gripper_@(side)_grasping_frame" reason="Never" />
+    <disable_collisions link1="caster_front_left_1_link" link2="gripper_@(side)_grasping_frame" reason="Never" />
+    <disable_collisions link1="caster_back_right_1_link" link2="gripper_@(side)_grasping_frame" reason="Never" />
+    <disable_collisions link1="caster_back_left_1_link" link2="gripper_@(side)_grasping_frame" reason="Never" />
+    <disable_collisions link1="xtion_link" link2="gripper_@(side)_grasping_frame" reason="Never" />
+    <disable_collisions link1="xtion_optical_frame" link2="gripper_@(side)_grasping_frame" reason="Never" />
+    <disable_collisions link1="xtion_depth_frame" link2="gripper_@(side)_grasping_frame" reason="Never" />
+    <disable_collisions link1="xtion_depth_optical_frame" link2="gripper_@(side)_grasping_frame" reason="Never" />
+    <disable_collisions link1="xtion_rgb_frame" link2="gripper_@(side)_grasping_frame" reason="Never" />
+    <disable_collisions link1="xtion_rgb_optical_frame" link2="gripper_@(side)_grasping_frame" reason="Never" />
+    <disable_collisions link1="base_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="base_antenna_left_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="base_antenna_right_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="wheel_right_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="wheel_left_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="caster_front_right_2_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="caster_front_left_2_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="caster_back_right_2_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="caster_back_left_2_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="torso_fixed_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="torso_fixed_column_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="torso_lift_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="head_1_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="head_2_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="cee_@(side)_tool_link" link2="base_laser_link" reason="Never"/>
+    <disable_collisions link1="cee_@(side)_tool_link" link2="base_footprint" reason="Never"/>
+    <disable_collisions link1="cee_@(side)_tool_link" link2="base_cover_link" reason="Never"/>
+    <disable_collisions link1="cee_@(side)_tool_link" link2="base_imu_link" reason="Never"/>
+    <disable_collisions link1="cee_@(side)_tool_link" link2="caster_front_right_1_link" reason="Never"/>
+    <disable_collisions link1="cee_@(side)_tool_link" link2="caster_front_left_1_link" reason="Never"/>
+    <disable_collisions link1="cee_@(side)_tool_link" link2="caster_back_right_1_link" reason="Never"/>
+    <disable_collisions link1="cee_@(side)_tool_link" link2="caster_back_left_1_link" reason="Never"/>
+    <disable_collisions link1="cee_@(side)_tool_link" link2="xtion_link" reason="Never"/>
+    <disable_collisions link1="cee_@(side)_tool_link" link2="xtion_optical_frame" reason="Never"/>
+    <disable_collisions link1="cee_@(side)_tool_link" link2="xtion_depth_frame" reason="Never"/>
+    <disable_collisions link1="cee_@(side)_tool_link" link2="xtion_depth_optical_frame" reason="Never"/>
+    <disable_collisions link1="cee_@(side)_tool_link" link2="xtion_rgb_frame" reason="Never"/>
+    <disable_collisions link1="cee_@(side)_tool_link" link2="xtion_rgb_optical_frame" reason="Never"/>
+    <disable_collisions link1="cee_@(side)_tool_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
+    <disable_collisions link1="arm_@(side)_tool_link" link2="cee_@(side)_tool_link" reason="Adjacent" />
+    <disable_collisions link1="arm_@(side)_tool_link" link2="cee_@(side)_tool_link" reason="Adjacent"/>
+    <disable_collisions link1="arm_@(side)_1_link" link2="cee_@(side)_tool_link" reason="Never" />
+    <disable_collisions link1="arm_@(side)_2_link" link2="cee_@(side)_tool_link" reason="Never" />
+    <disable_collisions link1="arm_@(side)_3_link" link2="cee_@(side)_tool_link" reason="Never" />
+    <disable_collisions link1="arm_@(side)_4_link" link2="cee_@(side)_tool_link" reason="Never" />
+    <disable_collisions link1="arm_@(side)_5_link" link2="cee_@(side)_tool_link" reason="Default" />
+    <disable_collisions link1="arm_@(side)_6_link" link2="cee_@(side)_tool_link" reason="Default" />
+    <disable_collisions link1="arm_@(side)_7_link" link2="cee_@(side)_tool_link" reason="Default" />
     <disable_collisions link1="arm_@(side)_tool_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
     <disable_collisions link1="arm_@(side)_1_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
     <disable_collisions link1="arm_@(side)_2_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
@@ -3536,6 +3595,12 @@ if side == "right":
     <disable_collisions link1="wrist_@(side)_ft_tool_link" link2="gripper_@(side)_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_tool_link" link2="gripper_@(side)_right_finger_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_tool_link" link2="gripper_@(side)_left_finger_link" reason="Never" />
+    @[end if]@
+
+    <!-- TODO: Modify according to your end effector links -->
+    @[if end_effector == "custom"]@    
+    <disable_collisions link1="wrist_@(side)_ft_link" link2="cee_@(side)_tool_link" reason="Never" />
+    <disable_collisions link1="wrist_@(side)_ft_tool_link" link2="cee_@(side)_tool_link" reason="Never" />
     @[end if]@
 
     @[if end_effector == "pal-hey5"]@
