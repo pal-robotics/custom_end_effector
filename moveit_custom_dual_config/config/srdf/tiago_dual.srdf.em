@@ -1112,7 +1112,9 @@ if side == "right":
     <disable_collisions link1="arm_@(side)_7_link" link2="gripper_@(side)_grasping_frame" reason="Never"/>
   @[end if]@
 
-  <!-- TODO: Modify according to your end effector links -->
+  <!-- TODO: Modify according to your end effector links. For each link of your gripper,  -->
+  <!-- TODO: duplicate each line containing "cee_@(side)_tool_link" and substitute for yours-->
+  <!-- TODO: Don't forget to create relations with your own end effector links-->
   @[if end_effector == "custom"]@
     <disable_collisions link1="caster_back_left_1_link" link2="cee_@(side)_tool_link" reason="Never" />
     <disable_collisions link1="caster_back_left_2_link" link2="cee_@(side)_tool_link" reason="Never" />
@@ -3597,7 +3599,9 @@ if side == "right":
     <disable_collisions link1="wrist_@(side)_ft_tool_link" link2="gripper_@(side)_left_finger_link" reason="Never" />
     @[end if]@
 
-    <!-- TODO: Modify according to your end effector links -->
+    <!-- TODO: Modify according to your end effector links. For each link of your gripper,  -->
+    <!-- TODO: duplicate each line containing "cee_@(side)_tool_link" and substitute for yours-->
+    <!-- TODO: Don't forget to create relations with your own end effector links-->
     @[if end_effector == "custom"]@    
     <disable_collisions link1="wrist_@(side)_ft_link" link2="cee_@(side)_tool_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_tool_link" link2="cee_@(side)_tool_link" reason="Never" />

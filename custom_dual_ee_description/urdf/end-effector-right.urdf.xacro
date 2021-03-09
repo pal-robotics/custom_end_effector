@@ -20,7 +20,7 @@
     - origin: Origin of the joint connection parent with the next link, as an origin tag
   -->
   <xacro:macro name="end_effector_right" params="parent *origin">
-
+    <!-- TODO: Include the URDF of your custom right end effector, as well as any controllers or gazebo plugins needed here. -->
     <!-- Example link and Joint -->
     <link name="cee_right_tool_link">
       <inertial>
@@ -52,9 +52,6 @@
       <child link="cee_right_tool_link" />
       <axis xyz="0 0 0" />
     </joint>
-
-    <!-- 
-      Include the URDF of your custom end effector, as well as any controllers or gazebo plugins needed here.
-    -->
+    
   </xacro:macro>
 </robot>

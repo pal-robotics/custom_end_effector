@@ -295,3 +295,5 @@ play_motion:
       - positions: [-1.1, 1.4679, 2.714, 1.7095, -1.5708, 1.3898, 0, -1.1, 1.4679, 2.714,
           1.7095, -1.5708, 1.3898, 0, 0.15]
         time_from_start: 12.5
+
+      # TODO: Add your own motions using your gripper

@@ -38,8 +38,9 @@ controller_list:
     type: FollowJointTrajectory
     joints:
       [torso_lift_joint]
-  # TODO: Add your own controller and uncomment/modify proper blocks
-  #  Uncomment and adapt this if you have at least one pal-gripper
+  # TODO: Add your own controller and uncomment/modify proper blocks if you use
+  # TODO: one of our grippers in the other arm
+  # TODO: Uncomment and adapt this if you have at least one pal-gripper
   # - name: gripper_<right|left>_controller
   #   action_ns: follow_joint_trajectory
   #   type: FollowJointTrajectory
@@ -48,7 +49,7 @@ controller_list:
   #     - gripper_<right|left>_left_finger_joint
   #     - gripper_<right|left>_right_finger_joint
 
-  #  Uncomment and adapt this if you have at least one hey-5
+  #  TODO: Uncomment and adapt this if you have at least one hey-5
   # - name: hand_<right|left>_controller
   # action_ns: follow_joint_trajectory
   # type: FollowJointTrajectory

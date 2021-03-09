@@ -11,6 +11,7 @@ approach_planner:
   exclude_from_planning_joints:
     - head_1_joint
     - head_2_joint
+    # TODO: Modify according to your needs. 
     - cee_right_tool_link
     - cee_left_tool_link
   joint_tolerance: 0.01
