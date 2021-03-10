@@ -37,7 +37,7 @@ controller_list:
     default: true
     type: FollowJointTrajectory
     joints:
-      [torso_lift_joint]
+      - torso_lift_joint
   # TODO: Add your own controller and uncomment/modify proper blocks if you use
   # TODO: one of our grippers in the other arm
   # TODO: Uncomment and adapt this if you have at least one pal-gripper

@@ -39,7 +39,7 @@ This package contains other configuration and launch files used by the TIAGo int
 * `config/approach_planner/approach_planner.yaml`
   * Contains paramters for `play_motion`, both planning groups to be used when planning the approach to the starting position via MoveIt, and the joints to be excluded (those not controlled via MoveIt).
 
-*  `config/motions/tiago_motions.yaml / config/motions/tiago_dual_motions.yaml`
+* `config/motions/tiago_motions.yaml / config/motions/tiago_dual_motions.yaml`
   **ATTENTION:**By default these motions only check for collitions the first position! This means that if your end effector differs a lot from ours, you should ensure first that it is not going to collide.
 
    * Contains predefined motions for the TIAGo robot. This motions may be modified as needed, but it is strongly recommended to keep at least the original `home` motion included in the file.
