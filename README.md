@@ -2,10 +2,10 @@
 This repository contains a set of prepared packages and files which can be used to integrate a custom end-effector to a TIAGo/TIAGo++ robot. Once the apropriate modifications are made, deploy all three packages to the robot and select `custom` for the end effector type on the Web Commander.
 
 ## Packages
-This repository is comprised of three different packages (3 foo each TIAGo model), which conatin a wrapper for the URDF description of the end-effector, configuration files and MoveIt configuration for the new configuration.
+This repository is comprised of three different packages (3 for each TIAGo model), which conatin a wrapper for the URDF description of the end-effector, configuration files and MoveIt configuration for the new configuration.
 
 **TIAGo++**
-To make your live easyer, we added in each of the following packages some comments inside files in order to let you find faster what to modify. Look for `TODO:` keyword to localize the tips.
+To make your lives easier, we added in each of the following packages some comments inside files in order to let you find faster what to modify. Look for `TODO:` keyword to localize the tips.
 
 ### custom_ee_description / custom_dual_ee_description
 This package contains a simple wrapper to include the URDF description of the custom end-effector, so the system knows its new configuration. This package must contain the following file/s:
@@ -20,9 +20,9 @@ This package contains a simple wrapper to include the URDF description of the cu
 ### moveit_custom_config / moveit_custom_dual_config
 This package contains configuration files need for MoveIt to interact properly with the new end-effector.
 * `controllers/controllers_custom.yaml`
-  * This file contains a list of controllers known to MoveIt. The default `arm_controller / arm_side_controller`, `torso_controller` and `head_controller` should be left on the file, but additional controllers required by the end-effector can be added here.
+  * This file contains a list of controllers known to MoveIt. The default `arm_controller / left_arm_controller right_arm_controller`, `torso_controller` and `head_controller` should be left on the file, but additional controllers required by the end-effector can be added here.
 
-**TIAGo**
+cccccccccccccccccccccccc
 *  `srdf/tiago_custom.srdf`
    * This file contains the `srdf` definition for the complete robot, defining move groups and blacklisted collisions. This file can be generated using the `moveit_setup_assistant` package, by loading the file `robots/tiago.urdf.xacro` in the `tiago_description` package and adding the `end_effector:=custom` argument.
 
@@ -39,7 +39,11 @@ This package contains other configuration and launch files used by the TIAGo int
 * `config/approach_planner/approach_planner.yaml`
   * Contains paramters for `play_motion`, both planning groups to be used when planning the approach to the starting position via MoveIt, and the joints to be excluded (those not controlled via MoveIt).
 
-* `config/motions/tiago_motions.yaml / config/motions/tiago_dual_motions.yaml`
-  **ATTENTION:**By default these motions only check for collitions the first position! This means that if your end effector differs a lot from ours, you should ensure first that it is not going to collide.
+* `config/motions/tiago_motions.yaml / config/motions/tiago_dual_custom_motions.yaml`
+  **ATTENTION:**By default these motions only check for collisions the first specified waypoint in the motion! This means that if your end effector differs a lot from ours, you should ensure first that it is not going to collide.
 
+**TIAGo**
    * Contains predefined motions for the TIAGo robot. This motions may be modified as needed, but it is strongly recommended to keep at least the original `home` motion included in the file.
+
+**TIAGo++**
+   * You should add motions related to your end effector. All combinations for other end effectors and parts of the body are defined inside `/tiago_dual_robot/tiago_dual_bringup/config/motions`.
