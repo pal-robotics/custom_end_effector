@@ -1184,7 +1184,9 @@
     <disable_collisions link1="arm_left_tool_link" link2="arm_right_tool_link" reason="Never" />
 
 
-  <!-- TODO: Modify according to your end effector links -->
+  <!-- TODO: Modify according to your end effector links. For each link of your gripper,  -->
+  <!-- TODO: duplicate each line containing "cee_left_tool_link" and substitute for yours-->
+  <!-- TODO: Don't forget to create relations with your own end effector links-->
       <disable_collisions link1="caster_back_left_1_link" link2="cee_left_tool_link" reason="Never" />
     <disable_collisions link1="caster_back_left_2_link" link2="cee_left_tool_link" reason="Never" />
     <disable_collisions link1="cee_left_tool_link" link2="gripper_left_grasping_frame" reason="Adjacent"/>
@@ -1249,7 +1251,9 @@
     <disable_collisions link1="arm_left_6_link" link2="gripper_left_grasping_frame" reason="Never"/>
     <disable_collisions link1="arm_left_7_link" link2="gripper_left_grasping_frame" reason="Never"/>
   
-  <!-- TODO: Modify according to your end effector links -->
+  <!-- TODO: Modify according to your end effector links. For each link of your gripper,  -->
+  <!-- TODO: duplicate each line containing "cee_right_tool_link" and substitute for yours-->
+  <!-- TODO: Don't forget to create relations with your own end effector links-->
   
 
 
@@ -1266,7 +1270,9 @@
     <disable_collisions link1="wrist_left_ft_link" link2="wrist_left_ft_tool_link" reason="Adjacent" />
 
     
-    <!-- TODO: Modify according to your end effector links -->
+    <!-- TODO: Modify according to your end effector links. For each link of your gripper,  -->
+    <!-- TODO: duplicate each line containing "cee_left_tool_link" and substitute for yours-->
+    <!-- TODO: Don't forget to create relations with your own end effector links-->
        
     <disable_collisions link1="wrist_left_ft_link" link2="cee_left_tool_link" reason="Never" />
     <disable_collisions link1="wrist_left_ft_tool_link" link2="cee_left_tool_link" reason="Never" />
@@ -3667,7 +3673,9 @@
     <disable_collisions link1="wrist_right_ft_link" link2="wrist_right_ft_tool_link" reason="Adjacent" />
 
     
-    <!-- TODO: Modify according to your end effector links -->
+    <!-- TODO: Modify according to your end effector links. For each link of your gripper,  -->
+    <!-- TODO: duplicate each line containing "cee_right_tool_link" and substitute for yours-->
+    <!-- TODO: Don't forget to create relations with your own end effector links-->
     
         <!-- Disable collisions with FT sensor -->    
     <disable_collisions link1="wrist_right_ft_link" link2="hand_right_safety_box" reason="Never" />
