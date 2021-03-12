@@ -16,11 +16,11 @@ arm_config = [True, False] #For validation of pmb2 only
 
 for left_end_effector in end_effectors:
     for right_end_effector in end_effectors:
-        if "custom" == left_end_effector or "custom" == right_end_effector:
-            for left_ft_sensor in ft_sensors:
-                for right_ft_sensor in ft_sensors:
-                    for has_arm_left in arm_config:
-                        for has_arm_right in arm_config:
+        for left_ft_sensor in ft_sensors:
+            for right_ft_sensor in ft_sensors:
+                for has_arm_left in arm_config:
+                    for has_arm_right in arm_config:
+                        if "custom" == left_end_effector and has_arm_left or "custom" == right_end_effector and has_arm_right:
                             cfg = {
                             "has_arm_left": has_arm_left,
                             "has_arm_right": has_arm_right,
