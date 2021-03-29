@@ -2,6 +2,9 @@
 Changelog for package moveit_custom_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.0 (2020-04-21)
 ------------------
 
