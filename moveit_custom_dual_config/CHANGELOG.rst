@@ -2,8 +2,8 @@
 Changelog for package moveit_custom_dual_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.1 (2021-03-29)
+------------------
 * Merge branch 'tiago-dual' into 'master'
   feat: dual customisation
   See merge request robots/custom_end_effector!1
